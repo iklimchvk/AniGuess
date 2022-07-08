@@ -2,7 +2,7 @@ package AnGuess;
 import java.util.Scanner;
 
 public class AnGuess {
-    private static Scanner stdin = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args)
     {
@@ -62,10 +62,10 @@ public class AnGuess {
 
         guessAnimal = current.getData( );
         System.out.println("Я не угадал, так кто же твое животное?");
-        correctAnimal = stdin.nextLine( );
+        correctAnimal = scanner.nextLine( );
         System.out.println("Введи вопрос который будет отличать твое животное -");
         System.out.println("Чем животное '" + correctAnimal + "' отличается от животного '" + guessAnimal + "'.");
-        newQuestion = stdin.nextLine( );
+        newQuestion = scanner.nextLine( );
 
         current.setData(newQuestion);
         System.out.println("В итоге " + correctAnimal + ", " + newQuestion);
@@ -86,11 +86,11 @@ public class AnGuess {
         String answer;
 
         System.out.print(prompt + " [Y or N]: ");
-        answer = stdin.nextLine( ).toUpperCase( );
+        answer = scanner.nextLine( ).toUpperCase( );
         while (!answer.startsWith("Y") && !answer.startsWith("N"))
         {
             System.out.print("Неверный ответ, нужно ввести символ 'Y' или 'N': ");
-            answer = stdin.nextLine( ).toUpperCase( );
+            answer = scanner.nextLine( ).toUpperCase( );
         }
 
         return answer.startsWith("Y");
